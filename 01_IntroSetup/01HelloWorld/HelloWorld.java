@@ -3,5 +3,8 @@ public class HelloWorld {
     System.out.println("Hello Word");
     String message = "Chào Việt nam";
     System.out.println(message);
+
+    SmartHome smartHome = new SmartHome();
+    smartHome.say("Chào ông chủ");
   }  
 }
