@@ -77,7 +77,13 @@ public class Math {
   }
 
   public float average(int[] numbers) {
-    return 0.0f;
+    float average=0f;
+
+        for(int i=0; i<numbers.length;i++){
+            
+            average = (average + numbers[i]);
+        }
+        return average/numbers.length;
   }
 
   public int[] reverseArray(int[] numbers) {
@@ -86,12 +92,33 @@ public class Math {
 
   // Đếm số lẻ trong một mảng
   public int countOddNumber(int[] numbers) {
-    return 0;
+     int dem=0;
+          for (int i = 0; i<numbers.length;i++){
+              if(numbers[i] %2!=0){
+                  dem=dem+1;
+              }
+              
+          }
+          return dem;
   }
 
   //Trả về mảng chỉ gồm các số lẻ. Ví dụ đầu vào 1, 2, 4, 5, 3 thì trả về [1, 5, 3]
   public int[] oddNumberArray(int[] numbers) {
-    return null;
+    int dem=0;
+for (int i = 0; i<numbers.length;i++){
+  if(numbers[i] %2!=0){
+      dem=dem+1;
+  }
+
+}
+int[] n=new int[dem];
+int t=0;
+for(int i=0; i<numbers.length;i++){
+  if(numbers[i] %2!=0){
+    n[t++]=numbers[i];
+  }
+}
+return n;
   }
   /* Dựa vào chỉ số BMI hãy trả về các đánh giá: Nhẹ cân, Bình thường, Quá cân, Rất nguy hiểm
   BMI	      Đánh giá
@@ -101,7 +128,21 @@ public class Math {
   30.0      Rất nguy hiểm
   */
   public String bmiRating(float height, float weight) {
-
+ float BMI=weight/(height*height);
+          if(BMI<18.5){
+            System.out.println(" Nhẹ cân");
+          }
+          if ((BMI>15.5)&&(BMI<24.9)) {
+            System.out.println("Bình Thường");
+            
+          }
+          if((BMI>25.0)&&(BMI<29.9)){
+System.out.println("Quá cân");
+          }
+          if(BMI>30.0){
+            System.out.println("Quá nguy hiểm");
+          }
+          return BMI;
   }
 
 
