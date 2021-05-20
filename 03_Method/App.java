@@ -15,14 +15,21 @@ public class App {
     + diameter + " = " 
     + math.circlePerimeter(diameter));
 
-    float x = 3.0f;
-    float y = 4.0f;
-    float z = 100.0f;
+    float x = 5.0f;
+    float y = 3.0f;
+    float z = 2.0f;
     if (math.isTriangle(x, y, z)) {
       System.out.println("x : " + x + ", y : " + y + ", z : " + z + " tạo thành một tam giác");
     } else {
       System.out.println("x : " + x + ", y : " + y + ", z : " + z + " không tạo thành một tam giác");
     }
-    
+
+    System.out.println("Số nhỏ nhất trong x: " + x 
+    + ", y: " + y 
+    + ", z: " + z 
+    + " là " + math.smallestIn3Numbers(x, y, z));
+
+    int[] intArray = new int[]{1, 2, 3};
+    System.out.println("Tổng của một mảng " + math.sum(intArray));
   }
 }
