@@ -52,6 +52,7 @@ public float average(int[] numbers) {
   return 0.0f;
 }
 
+
 public int[] reverseArray(int[] numbers) {
   return null;
 }
@@ -76,5 +77,51 @@ public String bmiRating(float height, float weight) {
 
 }
 ```
+```java
+public float sum(int[] numbers) {
+  float sum = 0f;
+  for(int i = 0; i < numbers.length; i++) {
+      sum += numbers[i];
+  }
+  return sum;
+}
+```
 
+## Bài tập nâng cao
 
+Hãy chú thích code cẩn thận để giải thích cho những bạn khác.
+### 1. Vẽ hình tam giác sao
+Nhập vào một số nguyên dương 3 < N < 10 vẽ một hình tam giác sao như dưới
+N = 5
+
+```
+* 
+* *
+* * *
+* * * * 
+* * * * *
+```
+
+### 2. Vẽ hình tam giác rỗng
+```
+*
+* *
+*   *
+*     *
+*   *
+* *
+*
+```
+
+### 3. Vẽ hình tam giác rỗng
+nhập vào 2 số:  3 < A, B < 9 hãy vẽ hình chữ nhật cạnh ngang có A dấu *, cạnh dọc có B dấu *
+Ví dụ
+A = 7, B = 6
+```
+* * * * * * * 
+*           * 
+*           * 
+*           * 
+*           * 
+* * * * * * * 
+```
