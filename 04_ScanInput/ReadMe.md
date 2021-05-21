@@ -1,5 +1,6 @@
 # Nhập dữ liệu từ bàn phím, vòng lặp while
 
+Code mẫu thầy để ở file [GuessNumber.java](GuessNumber.java)
 ## 1. Game đoán số
 Chúng ta sẽ lập trình một game đoán số.
 
@@ -29,4 +30,3 @@ Gợi ý phải dùng regex để kiểm tra
 1. ```while``` khác vòng lặp ```for``` ở điểm nào?
 2. ```continue``` để làm gì?
 3. ```break``` để làm gì?
-4. 
