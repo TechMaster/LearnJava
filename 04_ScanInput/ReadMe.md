@@ -30,3 +30,25 @@ Gợi ý phải dùng regex để kiểm tra
 1. ```while``` khác vòng lặp ```for``` ở điểm nào?
 2. ```continue``` để làm gì?
 3. ```break``` để làm gì?
+
+
+## 6. Hướng dẫn cách học
+1- Cải thiện khả năng đọc hiểu tiếng Anh.
+Mỗi ngày 10 từ tiếng Anh CNTT.
+
+
+2- Tăng dần thời gian lập trình Java
+
+3- Tìm 2 người bạn giỏi hơn mình để trao đổi về lập trình. Nhưng đừng ỷ lại, copy code rồi nộp bài.
+
+4- (0.99 ^ 395) vs (1.01)^365
+
+# 7. Từ mới tiếng Anh
+
+Console / Terminal: chỉ thiết bị giao tiếp với người dùng. Chủ yếu bằng màn hình và bàn phím (không dùng chuột)
+
+Scanner: để quét, thu nhận dữ liệu
+
+In: vào
+
+Out: ra
