@@ -70,6 +70,7 @@ public class PrimeUtil {
 
   public long[] createArrayPrimeNumbersC(int n) {
     long[] result = new long[n];
+    result[0] = 2; //Số nguyên tố đầu tiên
     int count = 0;
     int numberToCheck = 2;
     
@@ -77,7 +78,7 @@ public class PrimeUtil {
       boolean isPrime = true;
       long sqrtOfNumberToCheck = (long) Math.sqrt((double)numberToCheck); //căn bậc 2 của number
       
-      for (int i = 0; result[i] < sqrtOfNumberToCheck; i++) {
+      for (int i = 0; result[i] <= sqrtOfNumberToCheck; i++) {
         if (numberToCheck % result[i] == 0) {
           isPrime = false;
           break; // không phải số nguyên tố

@@ -25,6 +25,11 @@ public class App {
       }
     }
 
+    long[]result = primeUtil.createArrayPrimeNumbersC(1000);
+    if (!primeUtil.checkArrayContainsOnlyPrimeNumbers(result)) {
+      System.out.println("Cách của thầy Cường sai rồi");
+    }
+
     long start = System.nanoTime();
     primeUtil.createArrayPrimeNumbers(1000);
     long finish = System.nanoTime();
