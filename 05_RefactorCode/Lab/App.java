@@ -24,26 +24,26 @@ public class App {
         System.out.println("Sai rồi ! " + notPrimeNumbers[i] + " phải là số không nguyên tố");
       }
     }
-
-    long[]result = primeUtil.createArrayPrimeNumbersC(1000);
+    int N = 10000;
+    long[]result = primeUtil.createArrayPrimeNumbersC(N);
     if (!primeUtil.checkArrayContainsOnlyPrimeNumbers(result)) {
       System.out.println("Cách của thầy Cường sai rồi");
     }
 
     long start = System.nanoTime();
-    primeUtil.createArrayPrimeNumbers(1000);
+    primeUtil.createArrayPrimeNumbers(N);
     long finish = System.nanoTime();
     long timeElapsed = finish - start;
     System.out.println("Cách 1 " + timeElapsed);
     
     start = System.nanoTime();
-    primeUtil.createArrayPrimeNumbersB(1000);
+    primeUtil.createArrayPrimeNumbersB(N);
     finish = System.nanoTime();
     timeElapsed = finish - start;
     System.out.println("Cách 2 " + timeElapsed);
 
     start = System.nanoTime();
-    primeUtil.createArrayPrimeNumbersC(1000);
+    primeUtil.createArrayPrimeNumbersC(N);
     finish = System.nanoTime();
     timeElapsed = finish - start;
     System.out.println("Cách 3 " + timeElapsed);
