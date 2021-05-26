@@ -25,7 +25,7 @@ public class App {
       }
     }
     int N = 10000;
-    long[]result = primeUtil.createArrayPrimeNumbersC(N);
+    long[]result = primeUtil.createArrayPrimeNumbersD(N);
     if (!primeUtil.checkArrayContainsOnlyPrimeNumbers(result)) {
       System.out.println("Cách của thầy Cường sai rồi");
     }
@@ -47,5 +47,12 @@ public class App {
     finish = System.nanoTime();
     timeElapsed = finish - start;
     System.out.println("Cách 3 " + timeElapsed);
+
+
+    start = System.nanoTime();
+    primeUtil.createArrayPrimeNumbersD(N);
+    finish = System.nanoTime();
+    timeElapsed = finish - start;
+    System.out.println("Cách 4 " + timeElapsed);
   }
 }
