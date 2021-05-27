@@ -15,5 +15,15 @@ public class App {
     barcelona.players.add(lionelMessi);
     barcelona.players.add(griezMan);
     barcelona.addPlayer(sergoBusquest);
+
+    barcelona.addPlayer(new Player("Đoàn Văn Hậu", 11, Position.DEFENDER));
+
+    //Có mấy khả năng nữa:
+    //1- Đọc từ file CSV
+    //2- Đọc từ CSDL quan hệ
+    //3- Gọi lên REST API từ internet rồi đổ dữ liệu vào
+
+    //in ra danh sách các cầu thủ trong team
+    barcelona.showAllPlayers();
   }
 }

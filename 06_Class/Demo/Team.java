@@ -73,6 +73,35 @@ public class Team {
   public void addPlayer(Player player) {
     players.add(player);
   }
+
+  //Hãy code ở đây
+  public void showAllPlayers() {
+    /* cách của anh Quang Tùng */
+    //dùng vòng lặp có biến đếm thì có thể in ra thư tự
+    /*for(int i=0 ; i < players.size() ; i++){
+      System.out.println((i + 1) + " : " + players.get(i));
+    }*/
+
+    //Kiểu này là duyệt các phần tử không sử dụng biến đếm vị trí
+    //Ưu điểm: code gọn, nhìn trong sáng
+    /*for (Player player : players) {
+      System.out.println(player);
+    }*/
+    int i = 0;
+    while (i < players.size()) {
+      System.out.println((i + 1) + " : " + players.get(i));
+      i++;
+    }
+  }
+  //Dùng phương thức của team để khởi tạo dữ liệu nội bộ trong team là tốt nhất
+  //tuân thủ tính chất Encapsulation trong OOP.
+  public void loadPlayersFromCSV() {
+
+  }
+
+  public void getListPlayerFromREST() {
+
+  }
 }
 
 
