@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Team {
   //Luôn để property lên đầu
   String name;
@@ -11,6 +14,14 @@ public class Team {
   //thay đổi quyền truy xuất đến thuộc tính hoặc phương thức
   //phục vụ cho tính chất đóng gói (encapsulation)
 
+  List<Player> players;// = new ArrayList<>();
+  //Nếu không khởi tạo = new ArrayList<>(); thì players sẽ nhận giá trị null
+  //List là generic interface: giao diện có kiểu tổng quát
+  //ArrayList là một class implement inteface List.
+  //implement: là thực hiện / tuân thủ các mẫu phương thức trong interface
+  //implement khác với inheritance
+  //inheritance là kế thừa, và chỉ có thể kế thừa từ một class cha ~ single inheritance
+  //implement có thể tuân thủ nhiều interface khác nhau.
 
   //Sau đó là constructor
   public Team(String name, String stadium) {
@@ -57,6 +68,10 @@ public class Team {
   // Setter dùng để gán giá trị cho property
   public void setBudget(long budget) {
     this.budget = budget;
+  }
+
+  public void addPlayer(Player player) {
+    players.add(player);
   }
 }
 

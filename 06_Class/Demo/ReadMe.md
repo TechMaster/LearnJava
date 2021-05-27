@@ -20,3 +20,9 @@ Trong mỗi câu lạc bộ sẽ có danh sách các cầu thủ.
 Rồi in ra màn hình.
 
 Gợi ý các em nên dùng ```ArrayList<Player>``` để tạo danh sách các cầu thủ.
+
+## 2021-27-05
+
+1. access modifier
+2. getter / setter method
+3. List<Type>. List nó là một interface. Java interface khác gì với class. Google giúp thầy để tự hiểu.
