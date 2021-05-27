@@ -3,7 +3,6 @@ public class TeamFactory {
   //1- Đọc từ file CSV
   //2- Đọc từ CSDL quan hệ
   //3- Gọi lên REST API từ internet rồi đổ dữ liệu vào
-
   public static Team manchesterUnited() {
     Team team = new Team(
       "Manchester United", 
