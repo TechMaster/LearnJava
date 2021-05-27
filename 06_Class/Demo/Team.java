@@ -14,7 +14,7 @@ public class Team {
   //thay đổi quyền truy xuất đến thuộc tính hoặc phương thức
   //phục vụ cho tính chất đóng gói (encapsulation)
 
-  List<Player> players;// = new ArrayList<>();
+  private List<Player> players = new ArrayList<>();
   //Nếu không khởi tạo = new ArrayList<>(); thì players sẽ nhận giá trị null
   //List là generic interface: giao diện có kiểu tổng quát
   //ArrayList là một class implement inteface List.
@@ -87,9 +87,10 @@ public class Team {
     /*for (Player player : players) {
       System.out.println(player);
     }*/
+    System.out.println("Team " + this.name);
     int i = 0;
     while (i < players.size()) {
-      System.out.println((i + 1) + " : " + players.get(i));
+      System.out.println(" " + (i + 1) + " : " + players.get(i));
       i++;
     }
   }
