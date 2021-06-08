@@ -3,7 +3,7 @@ public class BankAccount {
 
   
   private String id;
-  private static float interestRate;
+  public static float interestRate;
   private Person owner;  
   private long balance;
 

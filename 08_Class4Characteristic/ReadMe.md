@@ -37,8 +37,28 @@ Bà mẹ này không bao giờ nói cho con và bất kỳ ai biết bố đẻ 
 Mặc định Java còn có giới hạn truy cập mức độ ```package```. Trong một công ty mọi người biết mã số mở cửa tự động. Người ngoài công ty không thể biết. Mã số mở cửa tự động cũng chả của riêng ai.
 
 *Nếu không có đóng gói, encapsulation thì điều gì xảy ra?*
+trong đời thường không có đóng gói, bạn đi mua hàng, bạn sẽ dùng tay, chứ không dùng túi để chứa đồ. Về nhà, mọi đồ đạc trong phòng sẽ để bừa bộn mà không có tủ lưu.
 
+## 1.1 Đóng gói còn thể hiện ở Composition !
+
+Khi chúng ta mổ xẻ một chiếc xe máy ra, sẽ thấy rất nhiều bộ phận đến từ các nhà sản xuất khác nhau. Nhưng bộ phận này cần được thiết kế để khi hỏng thì sẽ ảnh hưởng ít nhất đến các bộ phận khác, và dễ dàng thay thế.
+Bộ phận đề nổ tự động khi hỏng có thể thay thế mà không phải thay thế cả động cơ. Hay RAM, card màn hình có thể thay thế mới, bởi chúng có tính đóng gói và tuân thủ quy chuẩn (interface).
+
+Một xe máy hay một máy tính bao gồm (composition) nhiều bộ phận. Mỗi bộ phận này có tính đóng gói (encapsulation) và tuân thủ quy chuẩn (implement interface). Chính điều này sẽ khiến những người mới học lập trình sẽ thấy các tính chất trong OOP có gì đó rất mơ hồ, nhập nhằng. Thực tế là chúng liên quan chặt chẽ đến nhau. Nếu bạn chưa thực sự hiểu lập trình hướng đối tượng.
 
 ## 2. Abstraction : trừu tượng
+Trừu tượng đi cùng tính khai quát. Ví dụ những người châu Á có mắt đen, da vàng. Người Nhật chăm chỉ. Trong lập trình, cần sự trừu tượng và khai quát để định hình ra các kiểu dữ liệu. 
+- Để mô tả các khách hàng mở tài khoản ngân hàng, cần có những thuộc tính (property) và phương thức (method) gì là chung nhất? 
+- Trong một games mô phỏng các loài vật trong một khu rừng, để người chơi ấn vào đó, con vật phát ra âm thanh và di chuyển. Cần có những thuộc tính (property) và phương thức (method) để mô phỏng?
+- Để mô tả các bộ phim đang chiếu, sắp chiếu ở một rạp sẽ đưa lên một web site cho phép người dùng đặt vé, giữ chỗ, thanh toán, cần có thuộc tính, phương thức gì và cần bỏ qua thuộc tính gì.
 
-Trừu tượng đi cùng tính khai quát. Ví dụ những người châu Á có mắt đen, da vàng. Người Nhật chăm chỉ.
+Thiết kế abstraction sẽ bỏ đi nhưng thuộc tính, phương thức tiểu tiết, không thực sự hữu ích mà đúc kết ra những thuộc tính chung nhất, khái quát nhất, hữu ích nhất phục vụ cho phần mềm.
+
+Trong Java có 2 cơ chế để thực hiện Abstraction:
+
+- Tạo một base class để khai quát thuộc tính, phương thức cho các class khác kế thừa. Base class có thể concrete class (class thật sự) hoặc abstract class (class trừu tượng). Class thật sự có thể dùng để tạo ra object (đối tượng). Còn Class trừu tượng (abstract class) thì không thể tạo ra đối tượng. Nó chỉ dùng để làm mẫu tạo ra class khác có thể là concrete class hay abstract class.
+
+- Tạo ra một interface để khai quát mẫu phương thức. Một class hay interface có thể tuân thủ (implements) nhiều interface.
+
+Như vậy có thể thấy abstraction (trừu tượng) luôn đi cùng với inheritance (kế thừa). Phải có trừu tượng thì mới có kế thừa. Cầu thủ ra sân, phải có bóng. Bình nước dùng để đựng nước.
+

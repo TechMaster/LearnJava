@@ -10,6 +10,7 @@ public class AirDogFight {
     Mig35 mig35 = new Mig35();
     Mig21 mig21 = new Mig21();
     mig21.callOtherJetFighter(mig35);
+    mig35.callOtherJetFighter(mig21);
 
     F35 f35 = new F35();
     F18 f18 = new F18();

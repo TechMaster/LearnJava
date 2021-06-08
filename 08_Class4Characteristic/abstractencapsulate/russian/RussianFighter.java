@@ -4,7 +4,7 @@ import abstractencapsulate.JetFighter;
 
 public abstract class RussianFighter extends JetFighter {
   protected RussianFighter(String model) {
-    super("Russia", model); 
+    super("Russia", model);    
   }
 
   @Override

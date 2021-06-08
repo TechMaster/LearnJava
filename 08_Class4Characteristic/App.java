@@ -1,6 +1,4 @@
 import abstractencapsulate.AirDogFight;
-import abstractencapsulate.russian.Mig35;
-import abstractencapsulate.usa.F35;
 import bank.Bank;
 import encapsulate.Family;
 import polymorphism.Jungle;
@@ -11,14 +9,14 @@ public class App {
     Family family = new Family();
     family.simulate();
 
-    /*Jungle jungle = new Jungle();
+    AirDogFight airDogFight = new AirDogFight();
+    airDogFight.simulate();
+
+    Jungle jungle = new Jungle();
     jungle.simulate();
 
     Bank bank = new Bank();
     bank.simulate();
-
-    AirDogFight airDogFight = new AirDogFight();
-    airDogFight.simulate();*/
    
   }
 }
