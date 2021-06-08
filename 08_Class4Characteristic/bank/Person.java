@@ -1,3 +1,5 @@
+package bank;
+
 class Person {
   private final String name;
   private final String birthday;
@@ -12,13 +14,6 @@ class Person {
 
   public String getBirthday() {
     return birthday;
-  }
-  
+  }  
 }
 
-
-
-
-public class Bank {
-  
-}
