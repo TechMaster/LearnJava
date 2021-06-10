@@ -74,3 +74,51 @@ Tác dụng của Getter và Setter method:
 
 Java thường không trả về mã lỗi, mà sẽ throw exception. Throw exception có nhiều ưu điểm so với cách trả về mã lỗi như ở ngôn ngữ lập trình C!
 
+# Những điểm cần phải xem kỹ sau buổi hôm nay:
+
+1. Ý nghĩa, tác dụng của Getter method, Setter method
+```java
+class Student {
+  public String getFirstName() {    
+    return firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName.toLowerCase();
+  }
+
+  public String getLastName() {
+    return lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
+  }
+  //Tìm Cường, cường, CƯờng, CưỜng, CườNg, CườnG
+  public void setLastName(String lastName) {
+    this.lastName = lastName.toLowerCase();
+  } 
+
+  public String getFullName() {  //getter method
+    return getFirstName() + " " + getLastName();
+  }
+
+  public void setFullName(String fullName) {
+    String[] names = fullName.split(" ");
+    if (names.length < 2) {
+      throw new RuntimeException("Invalid full name");
+    }
+    firstName = names[0];
+    lastName = names[names.length - 1];
+  }
+}
+```
+2. Tại sao lại cần phải có uniqe key để xác định từng đối tượng
+3. Tại sao tôi lại dùng từ khoá ```static``` trong class IdGenerator
+
+```java
+public class IdGenerator {
+  private static long id = 0L;
+  public static long getNewID() {
+    id += 1; //tăng thêm một mỗi lần được gọi đến
+    return id;
+  }
+}
+```
+

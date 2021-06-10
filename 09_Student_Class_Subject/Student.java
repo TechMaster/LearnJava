@@ -41,6 +41,6 @@ public class Student {
 
   @Override
   public String toString() {
-    return "Student [id = " + id + " , full name = " + getFullName() + "]";
+    return "Student [id = " + id + ", full name = " + getFullName() + "]";
   }
 }
