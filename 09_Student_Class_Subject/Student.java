@@ -1,13 +1,15 @@
-public class Student {
-  @Override
-  public String toString() {
-    return "Student [firstName=" + firstName + ", lastName=" + lastName + "]";
-  }
-
+public class Student {  
+  private long id;  //Unique key dùng để xác định đối tượng
   private String firstName; //Họ
   private String lastName;  //Tên
 
-  
+  public Student(String firstName, String lastName) {
+    id = IdGenerator.getNewID();
+    setFirstName(firstName);
+    setLastName(lastName);    
+  }
+
+
   public String getFirstName() {    
     return firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
   }
@@ -25,7 +27,7 @@ public class Student {
   } 
 
   public String getFullName() {  //getter method
-    return this.getFirstName() + " " + this.getLastName();
+    return getFirstName() + " " + getLastName();
   }
 
   public void setFullName(String fullName) {
@@ -35,5 +37,10 @@ public class Student {
     }
     firstName = names[0];
     lastName = names[names.length - 1];
+  }
+
+  @Override
+  public String toString() {
+    return "Student [id = " + id + " , full name = " + getFullName() + "]";
   }
 }
