@@ -70,4 +70,7 @@ Trong VSCode để tạo Getter và Setter method, chúng ta làm như sau:
 
 Tác dụng của Getter và Setter method:
 - Nó cần phải kết hợp Aspect Programming
-- Có thể bổ xung logic vào Getter và Setter method
+- Có thể bổ xung logic vào Getter và Setter method. Cụ thể xử lý dữ liệu trước khi gán vào thuộc tính: validate xem dữ liệu có hợp lệ không, chuyển đổi dữ liệu cho đúng format.
+
+Java thường không trả về mã lỗi, mà sẽ throw exception. Throw exception có nhiều ưu điểm so với cách trả về mã lỗi như ở ngôn ngữ lập trình C!
+

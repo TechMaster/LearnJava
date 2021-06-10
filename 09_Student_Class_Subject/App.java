@@ -3,6 +3,9 @@ public class App {
     System.out.println("Mô phỏng lớp học");
 
     Student student = new Student();
-    student.setFullName("Trịnh Cường");
+    student.setFirstName("trịnH");
+    student.setLastName("cưỜng");
+    System.out.println(student);
+    System.out.println(student.getFullName());
   }
 }
