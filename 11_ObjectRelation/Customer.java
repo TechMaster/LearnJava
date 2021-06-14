@@ -1,4 +1,5 @@
 public class Customer implements Entity{  
+  
   private Long id; //Unique id identifies customer
 
   private String customerName;
@@ -43,6 +44,12 @@ public class Customer implements Entity{
   }
   public void setAddress(String address) {
     this.address = address;
+  }
+
+  @Override
+  public String toString() {
+    return "Customer [id=" + id + ", name=" + customerName + ", email=" + email +  
+    ", mobile=" + mobile + ", address=" + address +  "]";
   }
   
 }

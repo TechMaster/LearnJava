@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.Optional;
+
 public class App {
   public static void main(String[] args) {
 
@@ -9,6 +12,20 @@ public class App {
     db.productRepo.add(new Product("Aris Pro", "VinSmart", Country.Vietnam, "Android 5G"));
     db.productRepo.add(new Product("MaiWei", "Xiaomi", Country.China, "Thùng đựng đồ thông minh 35-55 lít"));
     db.productRepo.add(new Product("SUP Hyper 12.6", "AquaMarina", Country.China, "SUP touring 12.6, 2 khoang"));
-    
+   
+    List<Customer> customers = db.customerRepo.getAll();
+    for (Customer customer : customers) {
+      System.out.println(customer);
+    }
+
+    List<Product> products = db.productRepo.getAll();
+    for (Product product: products) {
+      System.out.println(product);
+    }
+
+    Optional<Customer> oCustomer = db.customerRepo.findById(1L);
+    if (oCustomer.isPresent()) {
+      System.out.println(oCustomer.get());
+    }
   }
 }

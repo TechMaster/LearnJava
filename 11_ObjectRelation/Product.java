@@ -1,4 +1,5 @@
 public class Product implements Entity {
+  
   private Long id;
   private String name;
   private String manufacturer;
@@ -48,4 +49,11 @@ public class Product implements Entity {
   public void setDescription(String description) {
     this.description = description;
   }
+
+  @Override
+  public String toString() {
+    return "Product [id=" + id + ", name=" + name + ", madeIn=" + madeIn + 
+    ", manufacturer=" + manufacturer +  ", description=" + description + "]";
+  }
+
 }
