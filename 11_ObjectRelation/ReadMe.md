@@ -117,10 +117,16 @@ Khi tuân thủ (implements), lập trình viên sẽ phải viết mã cụ th�
 
 Nếu chưa hiểu tại sao không tạo một ứng dụng nhỏ rồi thử tất cả các trường hợp để hiểu rõ hơn?
 
+Khi extedends thì có thể @Override (đè lên phương thức của lớp cha)
+
+Khi một interface extends interface khác, nó đơn giản chỉ là bổ xung thêm các mẫu hàm mới. Không có gì để @Override ở đây cả !
+
 
 ## Variadic paramters là gì? Dùng khi nào?
 
 Khi số lượng tham số cùng kiểu truyền vào phương thức không thể xác định. Có thể là 0, 1, 2 ... N. Lúc này dùng variadic parameters sẽ giúp khai báo phương thức không cần dùng kiểu ArrayList hay Array
+
+Tham số variadic sẽ được đóng gói thành kiểu mảng. Cần check length của mảng trước khi dùng !
 ```java
 public static String lengthBetween(String input, int... values) {
 }
@@ -139,4 +145,6 @@ public class Validation {
 }
 ```
 
+## Gợi ý thực hành
 
+Vào App.java hãy bổ xung lệnh để tạo Order và LineItem càng nhiều càng tốt.
