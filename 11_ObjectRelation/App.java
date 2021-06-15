@@ -27,5 +27,7 @@ public class App {
     if (oCustomer.isPresent()) {
       System.out.println(oCustomer.get());
     }
+
+    db.customerRepo.deleteByID(1L);
   }
 }

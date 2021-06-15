@@ -27,7 +27,7 @@ public class Validation {
       throw new RuntimeException("Mobile is not valid. It must have 10 to 11 digits");
     }
   }
-
+  //int... values khai báo variadic parameter
   public static String lengthBetween(String input, int... values) {
     if (values.length < 1 || values.length > 2) {
       throw new RuntimeException("You need to specify at least one parameter");
