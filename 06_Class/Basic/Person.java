@@ -1,6 +1,11 @@
 import java.time.LocalDate;
 
 public class Person{
+  @Override
+  public String toString() {
+    return "Person(firstName = '" + firstName + "', lastName = '" + lastName + "')";
+  }
+
   String firstName;
   String lastName;
   LocalDate birthday;

@@ -16,6 +16,7 @@ public class App {
     person.sayHi();
 
     Person johnHopkin = new Person("John", "Hopkin", LocalDate.of(1865, 05, 20));
+    System.out.println(johnHopkin);
   }
 
   static void demoVector() {

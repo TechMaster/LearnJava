@@ -208,4 +208,33 @@ public class FulltimeEmp extends Employee{
 }
 ```
 
+Hỏi: một class có thể kế thừa từ nhiều class không?
+Đáp: Không. Mỗi class chỉ kế thừa từ một class khác.
+
+---
+
+Hỏi: Java cho phép kế thừa đến mấy cấp?
+Đáp: Tôi không rõ. Nhưng theo nguyên tắc thiết kế clean code, đừng kế thừa quá sâu hơn 4 cấp. `A -> AA -> AAA -> AAAA` là đủ rồi đó. Nhiều hơn cấp độ kế thừa, phần mềm khó bảo trì.
+
+---
+
+Hỏi: Nếu tôi không thích lập trình hướng đối tượng, tôi không muốn khai báo class, mà chỉ viết các hàm vậy có được không?
+
+---
+Đáp: Được nếu bạn chỉ viết những hàm kiểm thử đơn giản. Còn nếu bạn thực sự lập trình ứng dụng Java, hãy nắm vững kỹ thuật lập trình hướng đối tượng.
 ## @Overide
+
+Hỏi: @Override là gì vậy?
+Đáp: Over + ride = phóng xe đè lên. Thực chất ở đây, chúng ta viết lại một phương thức trùng tên đè lên phương thức của base class.
+Trong ví dụ dưới, chúng ta viết đè phương thức `toString()`
+
+```java
+public class Person{
+  String firstName;
+  String lastName;
+  @Override
+  public String toString() {
+    return "Person(firstName = '" + firstName + "', lastName = '" + lastName + "')";
+  }
+}
+```
