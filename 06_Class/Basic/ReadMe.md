@@ -23,6 +23,35 @@ static void demoPerson() {
   person.sayHi();
 }
 ```
+---
+
+Hỏi: Có thể đặt một public class vào một file có tên khác với tên class?
+Đáp: Không! Quy tắc của Java, public class phải đặt vào file cùng tên với class
+
+---
+
+Hỏi: Có thể đặt tên class với ký tự đầu tiên là chữ thường?
+Đáp: Không và không nên!
+
+---
+
+Hỏi: một file java có thể chứa nhiều class được không?
+Đáp: được ! tuy nhiên chỉ có một class duy nhất là public, các class còn lại phải dùng default access modifier
+
+```java
+public class Jungle {
+  
+}
+
+class Tiger {
+
+}
+
+class Monkey {
+
+}
+```
+
 Hỏi: Trong một class, thuộc tính khác phương thức như thế nào?
 Đáp: Thuộc tính của một class chỉ tính chất chung mà các đối tượng được tạo ra từ class đều phải có. Còn phương thức là hành vi, hành động của đối tượng
 
@@ -34,6 +63,7 @@ Hỏi: phương thức (method) khác với hàm (function) như thế nào?
 Hàm (function) thường không gắn vào một class/object cụ thể. Thế nên người ta hay dùng lambda function (hàm được khai báo trực tiếp tại lúc dùng), chứ ít ai dùng lambda method.
 
 Nếu thỉnh thoảng bạn có nhầm lẫn giữa function và method cũng chả sao. Quan trọng là code đừng lỗi là được.
+
 ---
 
 Hỏi: tại sao lập trình hướng đối tượng (OOP) lại phức tạp đến vậy? Có cách nào đơn giản hơn không?
@@ -143,7 +173,39 @@ public Person(String firstName, String lastName, LocalDate birthday) {
 ```java
 Person johnHopkin = new Person("John", "Hopkin", LocalDate.of(1865, 05, 20));
 ```
+
+
 ## Java có Destructor không?
 
 Java không thực sự có Destructor nhưng nó có ghi đè phương thức finalize nếu class kế thừa từ `class Object`
 
+## Kế thừa - extends
+Hỏi: Tại sao cần có kế thừa?
+Đáp: 
+- Để tận dụng lại một kiểu đã có và bổ xung thêm thuộc tính, phương thức.
+- Để phân cấp quản lý các đối tượng
+- Phần mềm mô phỏng thực tế cuộc sống. Trong cuộc sống có kế thừa, thì phần mềm cũng phải có kế thừa.
+
+```java
+public class Employee {
+  String fullName;
+  LocalDate birthday;
+  LocalDate joinDate;
+}
+```
+
+```java
+public class Internship extends Employee{
+  String labProject;
+  String coach;
+}
+```
+
+```java
+public class FulltimeEmp extends Employee{
+  int rank;
+  int monthsInService;
+}
+```
+
+## @Overide
