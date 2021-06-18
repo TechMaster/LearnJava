@@ -31,6 +31,9 @@ Hỏi: Trong một class, thuộc tính khác phương thức như thế nào?
 Hỏi: phương thức (method) khác với hàm (function) như thế nào?
 Đáp: phương thức luôn gắn với một class. Nếu là static method, thì chúng ta chạy bằng `class.staticMethod()`. Nếu là non static method, thì chạy bằng `object.nonStaticMethod()`
 
+Hàm (function) thường không gắn vào một class/object cụ thể. Thế nên người ta hay dùng lambda function (hàm được khai báo trực tiếp tại lúc dùng), chứ ít ai dùng lambda method.
+
+Nếu thỉnh thoảng bạn có nhầm lẫn giữa function và method cũng chả sao. Quan trọng là code đừng lỗi là được.
 ---
 
 Hỏi: tại sao lập trình hướng đối tượng (OOP) lại phức tạp đến vậy? Có cách nào đơn giản hơn không?
