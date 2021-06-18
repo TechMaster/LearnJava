@@ -26,11 +26,13 @@ static void demoPerson() {
 ---
 
 Hỏi: Có thể đặt một public class vào một file có tên khác với tên class?
+
 Đáp: Không! Quy tắc của Java, public class phải đặt vào file cùng tên với class
 
 ---
 
 Hỏi: Có thể đặt tên class với ký tự đầu tiên là chữ thường?
+
 Đáp: Không và không nên!
 
 ---
@@ -53,11 +55,13 @@ class Monkey {
 ```
 
 Hỏi: Trong một class, thuộc tính khác phương thức như thế nào?
+
 Đáp: Thuộc tính của một class chỉ tính chất chung mà các đối tượng được tạo ra từ class đều phải có. Còn phương thức là hành vi, hành động của đối tượng
 
 ---
 
 Hỏi: phương thức (method) khác với hàm (function) như thế nào?
+
 Đáp: phương thức luôn gắn với một class. Nếu là static method, thì chúng ta chạy bằng `class.staticMethod()`. Nếu là non static method, thì chạy bằng `object.nonStaticMethod()`
 
 Hàm (function) thường không gắn vào một class/object cụ thể. Thế nên người ta hay dùng lambda function (hàm được khai báo trực tiếp tại lúc dùng), chứ ít ai dùng lambda method.
@@ -67,15 +71,18 @@ Nếu thỉnh thoảng bạn có nhầm lẫn giữa function và method cũng c
 ---
 
 Hỏi: tại sao lập trình hướng đối tượng (OOP) lại phức tạp đến vậy? Có cách nào đơn giản hơn không?
+
 Đáp: Xung quanh ta đều là đối tượng. Khi khái quát hoá lên, chúng ta sẽ có các class tập hợp các đối tượng cùng chung các đặc điểm và hành vi lại. Lập trình hướng đối tượng dễ khi các bạn luôn liên hệ với đời thường.
 
 ---
 
 Hỏi: tại sao `demoPerson()` phải khai báo với keyword `static`?
+
 Đáp: trong một class, một static method chỉ có thể gọi đến static method chứ không thể gọi non static method. Ở đây hàm main là static, do đó muốn main gọi được demoPerson thì demoPerson cũng phải là static.
 
 ---
 Hỏi: `static` khác gì với `non static` ?
+
 Đáp: `static` dùng để chỉ phương thức hoặc thuộc tính luôn gắn với Class chứ không phải Object.
 
 ---
@@ -86,6 +93,7 @@ Hỏi: `class` khác gì với  `object`?
 
 ---
 Hỏi: Ý nghĩa của `import Math.Vector;` là gì?
+
 Đáp: Java tổ chức theo package. Bên trong một package có thể có nhiều file Java. Tên của package cũng trùng tên với thư mục. Ví dụ `class Vector` nằm trong `package Math` thì trong `class App` muốn dùng kiểu Vector sẽ phải khai báo
 
 `import Math.Vector;`
@@ -116,7 +124,7 @@ Exception in thread "main" java.lang.Error: Unresolved compilation problems:
         The field Vector.y is not visible
 ```
 
-Trả lời: trong class có các từ khoá gọi access modifier. Chúng là `private, protected, public` chúng dùng để xác định quyền truy cập vào thuộc tính và phương thức bên trong một class. Có một access modifier mặc định không có keyword cụ thể, người ta gọi là package access modifier. Chỉ những class nằm trong cùng một package mới có thể truy xuất được các thuộc tính, phương thức của nhau.
+Đáp: trong class có các từ khoá gọi access modifier. Chúng là `private, protected, public` chúng dùng để xác định quyền truy cập vào thuộc tính và phương thức bên trong một class. Có một access modifier mặc định không có keyword cụ thể, người ta gọi là package access modifier. Chỉ những class nằm trong cùng một package mới có thể truy xuất được các thuộc tính, phương thức của nhau.
 
 
 Trong App.java, lệnh này báo lỗi khi biên dịch, vì [App.java](App.java) không cùng package với [Vector.java](Math/Vector.java)
@@ -129,7 +137,8 @@ Nhưng trong [DemoVector.java](Math/DemoVector.java) thì không báo lỗi vì 
 
 ### public vs private. Tại sao cần phải che dấu thuộc tính - phương thức?
 
-Hỏi: `public` là công khai thì rõ rồi. Tại sao phải dùng đến `private`? 
+Hỏi: `public` là công khai thì rõ rồi. Tại sao phải dùng đến `private`?
+
 Đáp: Hãy nhìn vào ví dụ `class NorthKorea` bạn sẽ thấy có những hoạt động mà Bắc Triều Tiên cần phải giấu thật kỹ, chỉ nội bộ biết, vậy phải dùng đến `private`
 
 ```java
@@ -151,6 +160,7 @@ public class NorthKorea {
 ### protected dùng khi nào?
 
 Hỏi: `protected` dùng khi nào?
+
 Đáp: `protected` chỉ cho phép các class kế thừa xem được thuộc tính, phương thức của mình. Ví dụ cụ thể: một ông chủ rất giàu, làm ở một công ty có nhiều nhân viên.
 
 - Ông ta có một người con riêng. Ông ta muốn giữ kín chuyện này với bất kỳ ai. Dùng `private`
@@ -181,6 +191,7 @@ Java không thực sự có Destructor nhưng nó có ghi đè phương thức f
 
 ## Kế thừa - extends
 Hỏi: Tại sao cần có kế thừa?
+
 Đáp: 
 - Để tận dụng lại một kiểu đã có và bổ xung thêm thuộc tính, phương thức.
 - Để phân cấp quản lý các đối tượng
@@ -209,11 +220,13 @@ public class FulltimeEmp extends Employee{
 ```
 
 Hỏi: một class có thể kế thừa từ nhiều class không?
+
 Đáp: Không. Mỗi class chỉ kế thừa từ một class khác.
 
 ---
 
 Hỏi: Java cho phép kế thừa đến mấy cấp?
+
 Đáp: Tôi không rõ. Nhưng theo nguyên tắc thiết kế clean code, đừng kế thừa quá sâu hơn 4 cấp. `A -> AA -> AAA -> AAAA` là đủ rồi đó. Nhiều hơn cấp độ kế thừa, phần mềm khó bảo trì.
 
 ---
@@ -225,6 +238,7 @@ Hỏi: Nếu tôi không thích lập trình hướng đối tượng, tôi khô
 ## @Overide
 
 Hỏi: @Override là gì vậy?
+
 Đáp: Over + ride = phóng xe đè lên. Thực chất ở đây, chúng ta viết lại một phương thức trùng tên đè lên phương thức của base class.
 Trong ví dụ dưới, chúng ta viết đè phương thức `toString()`
 
