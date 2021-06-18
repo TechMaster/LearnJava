@@ -4,8 +4,8 @@ import Math.Vector;
 
 public class App {
   public static void main(String[] args) {
-    System.out.println("Class Lesson");
     demoPerson();
+    //demoVector();
   }
 
   static void demoPerson() {
@@ -13,12 +13,14 @@ public class App {
     person.firstName = "John";
     person.lastName = "Mayer";
     person.birthday = LocalDate.of(1965, 11, 20);
-    System.out.println(person);
+    person.sayHi();
+
+    Person johnHopkin = new Person("John", "Hopkin", LocalDate.of(1865, 05, 20));
   }
 
   static void demoVector() {
     Vector vector = new Vector();
-    vector.x = 10;
-    vector.y = 11;
+   // vector.x = 10;
+   // vector.y = 11;
   }
 }
