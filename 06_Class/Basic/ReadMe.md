@@ -370,3 +370,32 @@ public boolean equals(Object obj) {
   return true;
 }
 ```
+
+Hỏi : `equals` khác gì với `==`?
+
+Đáp: A và B là hai em sinh đôi cùng trứng. Phát biểu sau đây cái nào chính xác?
+- A giống B : `A.equals(B)`
+- A chính là B: `A == B`
+
+Rõ ràng phát biểu số 1 `A.equals(B)` chính xác hơn.
+
+## Phương thức `hashCode()` trong class
+
+Hỏi: tại sao cần hàm hash trả về giá trị int của một đối tượng
+
+Đáp: `hashCode()` dùng để tính một giá trị int đại diện cho một đối tượng. Hai đối tượng cùng kiểu, chỉ cần khác nhau một chút giá trị thuộc tính sẽ có giá trị hash khác nhau. Tuy nhiên `hashCode()` không đảm bảo tính duy nhất tuyệt đối. Nó chỉ đảm bảo rằng, 2 đối tượng giống hệt nhau giá trị thuộc tính thì có hashCode bằng nhau. hashCode sẽ ứng dụng trong phần bổ đối tượng trong cấu trúc dữ liệu Hash
+
+
+
+```java
+@Override
+public int hashCode() {
+  final int prime = 31;
+  int result = 1;
+  result = prime * result + ((birthday == null) ? 0 : birthday.hashCode());
+  result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+  result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+  return result;
+}
+```
+
