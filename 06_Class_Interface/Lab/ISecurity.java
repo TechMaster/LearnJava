@@ -7,6 +7,17 @@ public interface ISecurity {
   static String getKeyCode() {
     return KEY;
   }
+  //The method doPrivateThing() from the type ISecurity is never used locally
+  private void doPrivateThing() {
+     System.out.println("do private thing");
+  }
+
+  //
+  public void doOtherthing() {
+    System.out.println("doOtherthing");
+  }
+
+  public final String AGE ="TEST";
 
   //Nhưng không thể khai báo non static method có cả phần code implementation
   // bên trong một interface
