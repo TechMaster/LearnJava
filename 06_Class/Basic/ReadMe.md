@@ -233,7 +233,6 @@ Hỏi: Java cho phép kế thừa đến mấy cấp?
 
 Hỏi: Nếu tôi không thích lập trình hướng đối tượng, tôi không muốn khai báo class, mà chỉ viết các hàm vậy có được không?
 
----
 Đáp: Được nếu bạn chỉ viết những hàm kiểm thử đơn giản. Còn nếu bạn thực sự lập trình ứng dụng Java, hãy nắm vững kỹ thuật lập trình hướng đối tượng.
 ## @Overide
 
@@ -250,5 +249,124 @@ public class Person{
   public String toString() {
     return "Person(firstName = '" + firstName + "', lastName = '" + lastName + "')";
   }
+}
+```
+
+---
+Hỏi: tại sao lại phải cần @Override (viết đè) khi lập trình OOP?
+
+Đáp: Bản chất của kế thừa đó là tận dụng thuộc tính, hành vi của lớp cha. Tuy nhiên khi cần vẫn có thể cải tiến, nâng cấp. Có như vậy ứng dụng mới trở nên phong phú và linh hoạt.
+
+## final class không cho phép kế thừa sâu hơn
+
+Chúng ta có `class RomeoJuliet` phiên bản Italy.
+
+```java
+public final class RomeoJuliet {
+  @Override
+  public String toString() {
+    return "Romeo loves Juliet forever";
+  }  
+}
+```
+
+Người Trung Quốc muốn copy và cải tiến cho lãng mạn hơn
+```java
+public class RomeoJulietChina extends RomeoJuliet {
+  
+}
+```
+
+Kết quả báo lỗi biên dịch như sau:
+```
+The type RomeoJulietChina cannot subclass the final class RomeoJulietJava(16777529)
+```
+
+`final class` ngăn không để một class tiếp tục bị kế thừa sâu hơn.
+
+## Từ khoá `this`
+Trong constructor của class Person ta thấy từ khoá `this`
+```java
+public Person(String firstName, String lastName, LocalDate birthday) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.birthday = birthday;
+}
+```
+
+`this` là từ khoá trong phương thức để truy xuất đến chính đối tượng sở hữu phương thức đó.
+
+## Từ khoá `super`
+
+`super` là từ khoá để gọi phương thức của class cha. Xem ví dụ dưới đây: `class Person` và `class HardworkPerson` đều có phương thức `public void work()`. Trong phương thức `work` của `HardPerson` vừa gọi lại phương thức của `Person` và bổ xung thêm logic của riêng mình. 
+
+```java
+public class HardworkPerson extends Person {
+  @Override
+  public void work() {
+    super.work();
+    System.out.println("Then continues to work 4 hours more in evening");
+  }  
+}
+```
+
+Kết quả in ra là:
+```
+Work 8 hours a day
+Then continues to work 4 hours more in evening
+```
+
+## Constructor có kế thừa được không?
+
+Hỏi: Các phương thức của class nếu không có từ khoá 'final' đề có thể kế thừa và Override. Vậy constructor có thể ghi đè không?
+
+Đáp: Không ! Constructor không thể kế thừa mà cũng không thể override
+
+```java
+public Person(String firstName, String lastName, LocalDate birthday) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.birthday = birthday;
+}
+```
+constructor ở HardworkPerson có thể sử dụng lại bằng cách gọi super nhưng không kế thừa
+```java
+public HardworkPerson(String firstName, String lastName, LocalDate birthday) {
+  super(firstName, lastName, birthday);
+}
+```
+
+## Phương thức `equals` trong class
+
+Hỏi: làm sao để so sánh 2 đối tượng cùng kiểu class và kết luận rằng chúng bằng nhau (equal)
+
+Đáp: Hãy viết đè phương thức equal. Nếu bạn lập trình VSCode hãy dùng chuột phải bật menu Source Action ... rồi chọn Generate Hash Code and Equals
+
+```java
+@Override
+public boolean equals(Object obj) {
+  if (this == obj)
+    return true;
+  if (obj == null)
+    return false;
+  if (getClass() != obj.getClass())
+    return false;
+  Person other = (Person) obj;
+  if (birthday == null) {
+    if (other.birthday != null)
+      return false;
+  } else if (!birthday.equals(other.birthday))
+    return false;
+  if (firstName == null) {
+    if (other.firstName != null)
+      return false;
+  } else if (!firstName.equals(other.firstName))
+    return false;
+  if (lastName == null) {
+    if (other.lastName != null)
+      return false;
+  } else if (!lastName.equals(other.lastName))
+    return false;
+  return true;
 }
 ```

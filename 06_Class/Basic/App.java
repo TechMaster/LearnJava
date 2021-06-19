@@ -17,6 +17,9 @@ public class App {
 
     Person johnHopkin = new Person("John", "Hopkin", LocalDate.of(1865, 05, 20));
     System.out.println(johnHopkin);
+
+    HardworkPerson elonMusk = new HardworkPerson("Elon", "Musk", LocalDate.of(1972, 05, 20));
+    elonMusk.work();
   }
 
   static void demoVector() {
