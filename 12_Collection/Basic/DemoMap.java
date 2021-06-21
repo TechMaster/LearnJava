@@ -26,11 +26,11 @@ public class DemoMap {
     );
 
     people.stream().forEach(person -> {
-      Integer count = countPeopleByCoutry.get(person.nationality);
+      Integer count = countPeopleByCoutry.get(person.getNationality());
       if (count == null) {
-        countPeopleByCoutry.put(person.nationality, 1);
+         countPeopleByCoutry.put(person.getNationality(), 1);
       } else {
-        countPeopleByCoutry.put(person.nationality, count + 1);
+        countPeopleByCoutry.put(person.getNationality(), count + 1);
       } 
     });
 
@@ -42,11 +42,4 @@ public class DemoMap {
 
 }
 
-class Person {
-  String name;
-  String nationality;
-  public Person(String name, String nationality){
-    this.name = name;
-    this.nationality = nationality;
-  }
-}
+
