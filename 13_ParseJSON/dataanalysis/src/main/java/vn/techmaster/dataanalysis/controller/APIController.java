@@ -26,4 +26,23 @@ public class APIController {
   public Map<String, Integer> countPeopleByNationality() {
     return personRepo.countPeopleByNationality();
   }
+
+  @GetMapping("/countnationality2")
+  public Map<String, Long> countPeopleByNationality2() {
+    return personRepo.countPeopleByNationality2();
+  }
+
+  @GetMapping("/countnationality3")
+  public List<Map.Entry<String, Long>> countPeopleByNationality3() {
+    return personRepo.countPeopleByNationality3();
+  }
+  @GetMapping("/countnationality4")
+  public List<Map.Entry<String, Long>> countPeopleByNationality4() {
+    return personRepo.countPeopleByNationality4();
+  }
+
+  @GetMapping("/countnationality5")
+  public Map<String, Long> countPeopleByNationality5() {
+    return personRepo.countPeopleByNationality5();
+  }
 }

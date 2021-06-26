@@ -1,9 +1,12 @@
 package vn.techmaster.dataanalysis.repository;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -47,5 +50,45 @@ public class PersonRepository {
       }
     }
     return result;
+  }
+
+  public Map<String, Long> countPeopleByNationality2() {
+    return people
+    .stream()
+    .collect(Collectors.groupingBy(Person::getNationality, Collectors.counting()));
+  }
+
+  //Sắp xếp theo quốc tịch từ A-Z
+  public List<Map.Entry<String, Long>> countPeopleByNationality3() {
+    return people
+    .stream()
+    .collect(Collectors.groupingBy(Person::getNationality, Collectors.counting()))
+    .entrySet()
+    .stream()
+    .sorted(Comparator.comparing(Map.Entry::getKey))
+    .collect(Collectors.toList());
+  }
+
+  //Sắp xếp theo số người cùng nhóm quốc tịch giảm dần
+  public List<Map.Entry<String, Long>> countPeopleByNationality4() {
+    return people
+    .stream()
+    .collect(Collectors.groupingBy(Person::getNationality, Collectors.counting()))
+    .entrySet()
+    .stream()
+    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+    .collect(Collectors.toList());
+  }
+
+  public Map<String, Long> countPeopleByNationality5() {
+    return people
+    .stream()
+    .collect(Collectors.groupingBy(Person::getNationality, Collectors.counting()))
+    .entrySet()
+    .stream()
+    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+    (oldValue, newValue) -> oldValue, LinkedHashMap::new
+    )); //Collectors.toMap để nhặt ra phần tử tạo ra LinkedHashMap mới 
   }
 }

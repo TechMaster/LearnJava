@@ -73,4 +73,9 @@ Hỏi: sự khác nhau khi trả về một biến dưới kiểu Interface khá
 
 Dưới interface Map chúng ta có rất nhiều biến thể dạng Concrete Class
 
+## Tác dụng thực tế của JUnit 
+
+Khi chúng ta đang code một đoạn code nhưng nó bị lỗi rất khó debug.
+Chúng ta có thể chuyển sang dùng Junit để debug từng phần nhỏ của code.
+
 
