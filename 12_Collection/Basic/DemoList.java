@@ -4,18 +4,30 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 public class DemoList {
   private DemoList() {}
+
+  public static void demoArray() {
+    String[] array = new String[] {"Thắng", "Dũng", "Trung", "Đức", "Cường"};
+    System.out.println(array[1]);
+    Object[] arrObj = new Object[5];
+    arrObj[0] = "Hello";
+    arrObj[1] = new Person("John", "France");
+  }
   public static void demoArrayList1() {
     ArrayList<String> manNames = new ArrayList<>(List.of("Thắng", "Dũng", "Trung", "Đức", "Cường"));
+    //Dùng vòng lặp for duyệt collection
     for (String manName : manNames) {
       System.out.println(manName);
     }
   }
   public static void demoArrayList2() {
     ArrayList<String> manNames = new ArrayList<>(List.of("Thắng", "Dũng", "Trung", "Đức", "Cường"));
+    //dùng stream().forEach(System.out::println);
+    //System.out::println gọi là function reference
+    //(name -> System.out.println(name) gọi là Lambda function
     manNames.stream().forEach(name -> System.out.println(name));
   }
   public static void demoArrayList3() {
@@ -24,7 +36,10 @@ public class DemoList {
   }
 
   public static void demoArrayList4() {
-    ArrayList<String> manNames = new ArrayList<>(List.of("Thắng", "Dũng", "Trung", "Đức", "Cường"));
+    //ArrayList<String> manNames = new ArrayList<>(List.of("Thắng", "Dũng", "Trung", "Đức", "Cường"));
+
+    List<String> manNames = List.of("Thắng", "Dũng", "Trung", "Đức", "Cường");
+    //Bổ xung phần tử 
     manNames.add("Phong");
     manNames.add("Hoà");
 
@@ -34,6 +49,7 @@ public class DemoList {
   }
 
   public static void demoArrayList5() {
+    //
     ArrayList<String> manNames = new ArrayList<>(Arrays.asList("Thắng", "Dũng", "Trung", "Đức", "Cường"));
     manNames.add("Phong");
     manNames.add("Hoà");
@@ -55,8 +71,10 @@ public class DemoList {
   }
 
   public static void demoArrayList7() {
-    String[] names = {"Thắng", "Dũng", "Trung", "Đức", "Cường"};
+    String[] names = {"Thắng", "Dũng", "Trung", "Đức", "Cường"};  //Tạo ra một mảng
     List<String> manNames = new ArrayList<>();
+
+    //Bổ xung một Array vào List
     Collections.addAll(manNames, names);
     manNames.stream().forEach(System.out::println);
   }
