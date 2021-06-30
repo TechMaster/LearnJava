@@ -82,11 +82,11 @@ public class PersonRepository {
 
   public Map<String, Long> countPeopleByNationality5() {
     return people
-    .stream()
-    .collect(Collectors.groupingBy(Person::getNationality, Collectors.counting()))
-    .entrySet()
-    .stream()
-    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+    .stream() //duyệt
+    .collect(Collectors.groupingBy(Person::getNationality, Collectors.counting()))  //gom
+    .entrySet() //lấy ra set
+    .stream() //duyệt
+    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())) //sắp xếp
     .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
     (oldValue, newValue) -> oldValue, LinkedHashMap::new
     )); //Collectors.toMap để nhặt ra phần tử tạo ra LinkedHashMap mới 

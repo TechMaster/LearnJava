@@ -71,14 +71,19 @@ public class PersonRepository {
   public Map<String, Long> fiveTopJobs() {
     Map<String, Long> jobGroupedThenCount = groupByJobThenCount();
     
-    return jobGroupedThenCount
-    .entrySet()
+    var step1 = jobGroupedThenCount.entrySet();
+    
+    var step2 = step1
     .stream()
     .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-    .limit(5)
+    .limit(5);
+
+    return step2   
     .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
     (oldValue, newValue) -> oldValue, LinkedHashMap::new
-    ));
+    )); // --> Map<String, Long>
+    //.collect(Collectors.toList()); --> List<Map.Entry<String, Long>>
+
   }
 
   //2.4 Tìm 5 thành phố có nhiều người trong danh sách ở nhất, đếm từ cao xuống thấp
