@@ -16,18 +16,21 @@ Kỹ năng lập trình, quản trị, tối ưu MySQL rất rộng và đa dạ
 ---
 
 Hỏi: Trong Java làm thế nào để thao tác lên CSDL MySQL?
+
 Đáp: Java có nhiều thư viện để thao tác lên MySQL:
 - API cấp thấp: JDBC
-- ORM giúp việc lập trình hướng đối tượng với CSDL quan hệ dễ dàng hơn thì có: Hibernate, JPA...
+- ORM giúp việc lập trình hướng đối tượng với CSDL quan hệ dễ dàng hơn thì có: Hibernate, JPA, JOOQ
 
 
 ---
 
 Hỏi: CRUD là gì?
+
 Đáp: Create - Read - Update - Delete?
 
 ---
-Hỏi: Cài MySQL trên máy tính như thế nào?`
+Hỏi: Cài MySQL trên máy tính như thế nào?
+
 Đáp: Tuỳ thuộc vào hệ điều hành bạn đang sử dụng. Có 3 cách chính:
 1. Tải file binary về rồi cài trực tiếp trên hệ điều hành
 2. Cài đặt Docker, sau đó chạy lệnh Docker run
@@ -38,14 +41,13 @@ docker run --name container_name -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d
 
 ---
 Hỏi: ORM là gì?
+
 Đáp: ORM là Object Relational Mapping một kỹ thuật để lập trình CSDL mà không viết câu lệnh SQL quá nhiều thay vào đó sử dụng OOP và các cấu trúc dữ liệu tương đương trong ngôn ngữ lập trình.
 
 ---
 Hỏi: DDL khác gì với DML?
+
 Đáp: DDL là Data Definition Language. Còn DML là Data Manipulation Language.
 DDL ví dụ lệnh `CREATE TABLE products`
 
 DML ví dụ lệnh `INSERT INTO products (name, price) VALUES ('nike shoes', 20000)`
-
-
-
